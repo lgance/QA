@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
 
+const port = 4500;
 
+app.listen(port,()=>{
+  console.log(`Only Node.js Test Example ${port}`)
+});
 
 app.get('/',async function (req, res) {
 
@@ -11,7 +15,6 @@ app.get('/',async function (req, res) {
   res.send(`TRIGGER WORKFLOW ${uuid}`);
 })
 
-app.listen(4500)
 
 function testWorkflow(uuid){
   return new Promise(async(resolve,reject)=>{
